@@ -1,0 +1,54 @@
+<div style="padding: 50pv">
+  <h1 class="text-center">Consultar Cliente</h1>
+  <div class="container">
+    <div class="mb-3">
+      <form class="example-form" [formGroup]="form">
+        <mat-form-field style="width: 60%;">
+          <mat-label>Seleccionar Tipo Documento</mat-label>
+          <mat-select formControlName="tipoDocumento">
+            @for (tipo of tiposDocumento; track tipo) {
+            <mat-option [value]="tipo.value">{{ tipo.viewValue }}</mat-option>
+            }
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Numero de Documento</mat-label>
+          <input
+            matInput
+            placeholder="Numero Documento"
+            formControlName="numDocumento"
+          />
+        </mat-form-field>
+      </form>
+      <section>
+        <div class="example-button-row">
+          <button
+            mat-raised-button
+            color="primary"
+            [disabled]="!form.valid"
+            (click)="consultarCliente()"
+          >
+            Buscar
+          </button>
+        </div>
+      </section>
+    </div>
+
+    @if (clienteConsultado != null) {
+    <mat-card class="cliente-card">
+      <mat-card-header class="cliente-card-header">
+        <mat-card-title class="cliente-card-title">Datos del Cliente</mat-card-title>
+      </mat-card-header>
+      <mat-card-content class="cliente-card-content">
+        <p class="text-capitalize" ><strong>Primer Nombre:</strong> {{ clienteConsultado.primerNombre }}</p>
+        <p class="text-capitalize"><strong>Segundo Nombre:</strong> {{ clienteConsultado.segundoNombre }}</p>
+        <p class="text-capitalize"><strong>Primer Apellido:</strong> {{ clienteConsultado.primerApellido }}</p>
+        <p class="text-capitalize"><strong>Segundo Apellido:</strong> {{ clienteConsultado.segundoApellido }}</p>
+        <p class="text-capitalize"><strong>Teléfono:</strong> {{ clienteConsultado.telefono }}</p>
+        <p class="text-capitalize"><strong>Dirección:</strong> {{ clienteConsultado.direccion }}</p>
+        <p class="text-capitalize"><strong>Ciudad de Residencia:</strong> {{ clienteConsultado.ciudadResidencia }}</p>
+      </mat-card-content>
+    </mat-card>
+    }
+  </div>
+</div>

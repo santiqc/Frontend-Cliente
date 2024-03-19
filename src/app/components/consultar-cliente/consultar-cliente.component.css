@@ -1,0 +1,59 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.mb-3 {
+  display: flex;
+  margin-bottom: 1rem !important;
+  content: aliceblue;
+  flex-direction: column;
+  align-content: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+section {
+  display: table;
+}
+  
+  
+.example-button-row {
+  max-width: 600px;
+  display: flex;
+  justify-content: flex-end;
+}
+  
+.example-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.cliente-card {
+  width: 800px; 
+  margin: 0 auto;
+  background-color: #f5f5f5; 
+  border-radius: 10px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.cliente-card-header {
+  background-color: #4665c1; 
+  color: white; 
+}
+
+.cliente-card-title {
+  font-size: 24px; 
+}
+
+.cliente-card-content {
+  padding: 16px; 
+}
+
+.cliente-info {
+  margin-bottom: 8px; 
+}
