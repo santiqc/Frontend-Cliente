@@ -1,3 +1,3 @@
 export const environment = {
-    urlBaseClient: 'http://localhost:8090/api/v1'
+    urlBaseClient: 'https://cliente-info-api.azurewebsites.net/api/v1'
 };
