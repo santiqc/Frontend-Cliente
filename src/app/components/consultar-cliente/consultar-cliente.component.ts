@@ -35,7 +35,7 @@ import { ClienteDTO, ResponseDTO } from '../../interfaces/responseDto';
 })
 export class ConsultarClienteComponent implements OnInit {
   tiposDocumento: any[] = [
-    { value: 'C', viewValue: 'Cedula de Ciudadania' },
+    { value: 'C', viewValue: 'Cédula de Ciudadanía' },
     { value: 'P', viewValue: 'Pasaporte' },
   ];
 
@@ -67,13 +67,11 @@ export class ConsultarClienteComponent implements OnInit {
 
     this.clienteService.consultarCliente(data).subscribe({
       next: (value: ResponseDTO) => {
-        console.log(value);
         this.clienteConsultado = value.data;
         this.alertService.mensajeExito(value.mensaje);
       },
       error: (err) => {
         this.clienteConsultado = null;
-        console.log(err);
         this.alertService.mensajeError(err.error.mensaje);
 
       },
