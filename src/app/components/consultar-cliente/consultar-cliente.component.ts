@@ -59,6 +59,8 @@ export class ConsultarClienteComponent implements OnInit {
   }
 
   consultarCliente() {
+    this.alertService.loading("Cargando...")
+
     const valoresFormulario = this.form.getRawValue();
     const data: RequestDTO = {
       tipoDocumento: valoresFormulario.tipoDocumento,
@@ -74,6 +76,8 @@ export class ConsultarClienteComponent implements OnInit {
         this.clienteConsultado = null;
         this.alertService.mensajeError(err.error.mensaje);
 
+      }, complete: () => {
+        this.alertService.close();
       },
     })
   }

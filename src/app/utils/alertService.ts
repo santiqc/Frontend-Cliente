@@ -26,4 +26,23 @@ export class AlertService {
     });
   }
 
+  
+  public loading(text: string): void {
+    Swal.fire(
+      {
+        showConfirmButton: false,
+        showCloseButton: false,
+        showCancelButton: false,
+        allowEscapeKey: false,
+        footer: `<p>${text}</p>`,
+        width: 312
+      });
+    Swal.showLoading();
+
+  }
+
+  public close(): void {
+    Swal.close();
+  }
+
 }
